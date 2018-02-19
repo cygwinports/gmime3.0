@@ -1,0 +1,30 @@
+ORIG_PN="gmime"
+inherit gnome2
+
+NAME="gmime3.0"
+VERSION=3.0.5
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="GObject MIME parser library"
+DESCRIPTION="The GMime suite provides a core library and set of utilities which
+may be used for the creation and parsing of messages using the Multipurpose
+Internet Mail Extension (MIME)."
+
+PATCH_URI="
+	2.6.0-cygwin.patch
+"
+
+PKG_NAMES="lib${NAME}_0 lib${NAME}-devel lib${NAME}-doc girepository-GMime3.0 vala-gmime3.0"
+libgmime3_0_0_CONTENTS="
+	usr/bin/cyggmime-3.0-0.dll
+	usr/share/doc/${NAME}
+"
+libgmime3_0_devel_CONTENTS="
+	usr/include/gmime-3.0/
+	usr/lib/libgmime-3.0.dll.a
+	usr/lib/pkgconfig/gmime-3.0.pc
+"
+libgmime3_0_doc_CATEGORY="Doc"
+libgmime3_0_doc_CONTENTS="usr/share/gtk-doc/html/gmime-3.0/"
+girepository_GMime3_0_CONTENTS="usr/*/gir*/GMime-3.0.*"
+vala_gmime3_0_CONTENTS="usr/share/vala/vapi/gmime-3.0.*"
